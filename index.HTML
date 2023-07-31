@@ -1,0 +1,74 @@
+<html lang="en">
+<head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>Document</title>
+      <style>
+            body{
+                  padding:50px 100px ;
+            }
+            h1{
+                  text-align: center;
+                  color: red;
+            }
+            #container{
+                  text-align: center;
+                  background-color:green;
+                  padding: 50px;
+                  
+            }
+            
+            .b
+            {
+                  display: inline-block;
+            }
+            .cls{
+                 margin:10px;
+                 font-weight:bold;
+                 font-size: 30px;
+                 width: 250px;
+                 text-align: center;
+            }
+            label{
+                  font-size: 22px;
+            }
+      </style>
+</head>
+<body>
+      <h1>temprature converter(c to f)</h1>
+      <div id="container">
+            <div class="a">
+                  <label>celsius</label><br>
+              <input type="number" value="0" class="cls" id="cel" >    
+            </div>
+            <div class="b">
+                  <label> forenheite</label><br>
+                  <input type="number" value="32"  class="cls" id="fah">
+            </div>
+      </div>
+      <script>
+            var cel=document.getElementById("cel");
+            var fah=document.getElementById("fah");
+            cel.addEventListener('input',function(){
+      //    console.log("cell changed");
+            let c=this.value;
+            let f=(c*9/5)+32;
+            // if(!Number.isInteger(f)){
+            //       f=f.tofixed(4);
+            // }
+             fah.value=f;
+            });
+            fah.addEventListener('input',function(){
+            // console.log("fah changed");
+            let f=this.value;
+            let c=(f-32)*5/9;
+            // if(!Number.isInteger(c)){
+            //       c=c.tofixed(4);
+
+            // }
+            cel.value=c;
+            });
+      </script>
+      
+</body>
+</html>
